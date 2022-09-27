@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+ <html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="build/css/main.css">
+  <link rel="stylesheet" href="build/css/intlTelInput.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1></h1>
+
+    
+    <form name="myForm" method="post" action="deposit.html" onsubmit="return validateForm()">
+   
+    <!-- <input id="num"  type="number" class="it" placeholder="258*********"  name="num" type="tel"       required > -->
+
+
+      <div class= "app-container">
+          <div class="top-box">  
+          <p><span class="left-icon">&#x2196;</span><span class="right-icon">&#xb7;&#xb7;&#xb7;</span></p>
+          </div>
+          
+          <div class="middle-box">
+              <h1>1599<span>$</span></h1>
+              <p>Number one</p>
+          </div>
+          <form>
+          <div class="card-details">
+            <div class="iti">
+          
+          <div class="card-num-field-group">
+          <label>Deposit To</label><br>
+          <input id="phone"   class="card-num-field" placeholder="258*********"  name="phone" type="tel"       required  min="0" maxlength="14" type="number">
+          <input id="phone"   class="card-num-field" placeholder="258*********"  name="phone" type="tel"       required  min="0" maxlength="14" type="number">
+           <br>
+      
+         
+            <div class="card-num-field-group">
+            <label>Amount</label><br>
+            <input id="phone"  class="card-num-field" placeholder="10" name="phone" required  min="0" maxlength="7" type="number">
+            </div>
+            <br>
+      
+            <div class="card-num-field-group">
+              <label>Deposit From</label><br>
+              
+              <input id="phone"class="card-num-field" placeholder="258*********" name="phone" type="tel"    required min="0" maxlength="14" type="number">
+              <br>
+              <br>
+              
+          </div>
+          
+          <a href="deposit.html">
+              <input type="submit" value="submit" class="pay-btn"  >    
+          </div>
+            </div>
+      </div>
+      </form> 
+      
+  
+
+  <script src="build/js/intlTelInput.js"></script>
+    <script>
+    // Vanilla Javascript
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input,({
+      // options here
+    }));
+
+    $(document).ready(function() {
+        $('.iti__flag-container').click(function() { 
+          var countryCode = $('.iti__selected-flag').attr('title');
+          var countryCode = countryCode.replace(/[^0-9]/g,'')
+          $('#phone').val("");
+          $('#phone').val("+"+countryCode+" "+ $('#phone').val());
+       });
+    });
+  </script>
+</body>
+</html>
